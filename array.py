@@ -1,19 +1,19 @@
-n = int(input("Enter number of scores: "))
+import sys
 
-scores = []
+# Accept scores through command-line arguments
+scores = list(map(int, sys.argv[1:]))
 
-for i in range(n):
-    s = int(input("Enter score: "))
-    scores.append(s)
-
+# Calculate sum and average
 total = sum(scores)
-average = total / n
+average = total / len(scores)
 
+# Find maximum and minimum
 maximum = max(scores)
 minimum = min(scores)
 
-print("\nScores:", scores)
-print("Sum =", total)
-print("Average =", average)
-print("Maximum =", maximum)
-print("Minimum =", minimum)
+# Display results
+print("Scores:", scores)
+print("Sum:", total)
+print("Average:", average)
+print("Maximum score:", maximum)
+print("Minimum score:", minimum)
